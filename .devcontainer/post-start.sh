@@ -8,3 +8,9 @@ source .devcontainer/util/source_framework.sh
 
 
 printInfoSection "Your dev.container finished starting up"
+
+if [ -n "$CODESPACE_NAME" ]; then
+    printInfo "Codespace Name: $CODESPACE_NAME"
+else
+    printWarn "CODESPACE_NAME environment variable not set."
+fi
